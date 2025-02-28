@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Space Chatbot</title>
+    <style>
+        /* CSS Styling */
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSui0zibDENSjloFJ8NGvisWEVb1DH5dYfcWA&s') no-repeat center center/cover;
+            font-family: Arial, sans-serif;
+        }
+
+        .chat-container {
+            width: 400px;
+            height: 500px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .chat-box {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            color: rgba(52, 5, 5, 0.878);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .message {
+            max-width: 75%;
+            padding: 10px;
+            border-radius: 10px;
+            word-wrap: break-word;
+            font-size: 14px;
+        }
+
+        .user-message {
+            align-self: flex-end;
+            background: linear-gradient(135deg, #0f0, #00f);
+            color: white;
+        }
+
+        .bot-message {
+            align-self: flex-start;
+            background: rgba(255, 255, 255, 0.2);
+            color: rgba(40, 3, 3, 0.732);
+        }
+
+        .input-box {
+            display: flex;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.3);
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .send-btn {
+            background: linear-gradient(135deg, #0f0, #00f);
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            margin-left: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+            transition: transform 0.2s, box-shadow 0.2s;
+            font-size: 20px;
+            color: white;
+        }
+
+        .send-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-box" id="chat-box"></div>
+        <div class="input-box">
+            <input type="text" id="user-input" placeholder="Type a message...">
+            <button class="send-btn" onclick="sendMessage()">➤</button>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for Chatbot Functionality
+        function sendMessage() {
+            let userInput = document.getElementById("user-input").value;
+            if (!userInput.trim()) return;
+
+            let chatBox = document.getElementById("chat-box");
+            
+            // Add User Message
+            let userMessage = document.createElement("div");
+            userMessage.className = "message user-message";
+            userMessage.innerText = userInput;
+            chatBox.appendChild(userMessage);
+
+            // Bot Response
+            let botReply = getBotResponse(userInput);
+            let botMessage = document.createElement("div");
+            botMessage.className = "message bot-message";
+            botMessage.innerText = botReply;
+            chatBox.appendChild(botMessage);
+
+            // Clear Input
+            document.getElementById("user-input").value = "";
+
+            // Auto-scroll to the latest message
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        function getBotResponse(input) {
+            input = input.toLowerCase();
+
+            // Simple responses
+            let responses = {
+                "hi": "Hello! How can I assist you today?",
+                "hello": "Hi there! What can I help you with?",
+                "how do i apply": "You can apply online through our admissions page at https://apply.adtu.in/",
+                "what courses are offered": "We offer Engineering, Management, Health Sciences, and Humanities programs.",
+                "what is the fee structure": "The B.Tech fee ranges from INR 3.90 to 4.10 lakhs, while MBA costs around INR 4.55 lakhs.",
+                "tell me about assam down town university": "Assam Down Town University (AdtU) is a private institution in Panikhaiti, Guwahati, Assam, India, established in 2010. The university covers 42 acres, offering modern facilities like seminar rooms, auditoriums, and an amphitheater. It provides over 60 undergraduate and postgraduate programs in Engineering, Management, Health Sciences, and Humanities.",
+                "quit": "Thank you for using the chatbot. Have a great day!"
+            };
+
+            return responses[input] || "I'm sorry, I didn't understand that. Can you rephrase?";
+        }
+    </script>
+</body>
+</html>

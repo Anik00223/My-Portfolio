@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anik Das - Web Developer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+      @keyframes float {
+          0% { transform: translateY(0px); }
+          50% { transform: translateY(-20px); }
+          100% { transform: translateY(0px); }
+      }
+      .floating { animation: float 6s ease-in-out infinite; }
+      .skill-bar { transition: width 1s ease-in-out; }
+      .project-card { transition: transform 0.3s ease-in-out; }
+      .project-card:hover { transform: translateY(-10px); }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#00F0FF",
+              secondary: "#BD00FF",
+            },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-gray-50">
+    <nav class="fixed top-0 w-full bg-white shadow-md z-50">
+      <div class="container mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+          <div class="text-2xl font-['Pacifico'] text-primary">Anik Das</div>
+          <div class="hidden md:flex space-x-8">
+            <a href="#home" class="hover:text-primary transition-colors"
+              >Home</a
+            >
+            <a href="#projects" class="hover:text-primary transition-colors"
+              >Projects</a
+            >
+            <a href="#skills" class="hover:text-primary transition-colors"
+              >Skills</a
+            >
+            <a
+              href="#certifications"
+              class="hover:text-primary transition-colors"
+              >Certifications</a
+            >
+            <a href="#contact" class="hover:text-primary transition-colors"
+              >Contact</a
+            >
+          </div>
+          <button class="md:hidden w-10 h-10 flex items-center justify-center">
+            <i class="ri-menu-line text-2xl"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <section id="home" class="pt-24 min-h-screen">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 mb-12 md:mb-0">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6">
+              Hi, I'm <span class="text-primary">Anik Das</span>
+            </h1>
+            <p class="text-xl mb-8 text-gray-600">
+              A passionate Web Developer specializing in creating beautiful,
+              functional, and user-friendly websites. With expertise in HTML,
+              CSS, JavaScript, Python, and SQL Query Optimization.
+            </p>
+            <button
+              class="bg-primary text-white px-8 py-3 !rounded-button hover:opacity-90 transition-opacity"
+            >
+              View My Work
+            </button>
+          </div>
+          <div class="md:w-1/2 floating">
+            <img
+              src="https://public.readdy.ai/ai/img_res/aa29e2f96ae7610e9d23d46be3ff5fad.jpg"
+              alt="Hero Image"
+              class="w-full rounded-lg shadow-2xl"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="py-20 bg-white">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-16">Featured Projects</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div
+            class="project-card bg-white rounded-lg shadow-lg overflow-hidden"
+          >
+            <img
+              src="https://public.readdy.ai/ai/img_res/2ed9bb710fc0bf14d1edcd5210060ef1.jpg"
+              alt="Project 1"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Analytics Dashboard</h3>
+              <p class="text-gray-600 mb-4">
+                A real-time analytics dashboard with interactive charts and data
+                visualization.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="px-3 py-1 bg-gray-100 rounded-full text-sm"
+                  >React</span
+                >
+                <span class="px-3 py-1 bg-gray-100 rounded-full text-sm"
+                  >D3.js</span
+                >
+                <span class="px-3 py-1 bg-gray-100 rounded-full text-sm"
+                  >Node.js</span
+                >
+              </div>
+              <div class="flex space-x-4">
+                <a href="#" class="text-primary hover:opacity-80">
+                  <i class="ri-github-line text-xl"></i>
+                </a>
+                <a href="#" class="text-primary hover:opacity-80">
+                  <i class="ri-external-link-line text-xl"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="project-card bg-white rounded-lg shadow-lg overflow-hidden"
+          >
+            <img
+              src="https://public.readdy.ai/ai/img_res/9321e1e90f2eab79f0f9cc4abc35bbb2.jpg"
+              alt="Project 2"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">E-commerce Platform</h3>
+              <p class="text-gray-600 mb-4">
+                A full-featured e-commerce platform with payment integration and
+                inventory management.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="px-3 py-1 bg-gray-100 rounded-full text-sm"
+                  >Vue.js</span
+                >
+                <span class="px-3 py-1 bg-gray-100 rounded-full text-sm"
+                  >Python</span
+                >
+                <span class="px-3 py-1 bg-gray-100 rounded-full text-sm"
+                  >PostgreSQL</span
+                >
+              </div>
+              <div class="flex space-x-4">
+                <a href="#" class="text-primary hover:opacity-80">
+                  <i class="ri-github-line text-xl"></i>
+                </a>
+                <a href="#" class="text-primary hover:opacity-80">
+                  <i class="ri-external-link-line text-xl"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-16">Skills & Expertise</h2>
+        <div class="grid md:grid-cols-2 gap-12">
+          <div>
+            <h3 class="text-2xl font-bold mb-8">Technical Skills</h3>
+            <div class="space-y-6">
+              <div>
+                <div class="flex justify-between mb-2">
+                  <span class="font-medium">HTML/CSS</span>
+                  <span>95%</span>
+                </div>
+                <div class="h-2 bg-gray-200 rounded-full">
+                  <div
+                    class="h-2 bg-primary rounded-full"
+                    style="width: 95%"
+                  ></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-2">
+                  <span class="font-medium">JavaScript</span>
+                  <span>90%</span>
+                </div>
+                <div class="h-2 bg-gray-200 rounded-full">
+                  <div
+                    class="h-2 bg-primary rounded-full"
+                    style="width: 90%"
+                  ></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-2">
+                  <span class="font-medium">Python</span>
+                  <span>85%</span>
+                </div>
+                <div class="h-2 bg-gray-200 rounded-full">
+                  <div
+                    class="h-2 bg-primary rounded-full"
+                    style="width: 85%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold mb-8">Soft Skills</h3>
+            <div class="space-y-6">
+              <div>
+                <div class="flex justify-between mb-2">
+                  <span class="font-medium">Problem Solving</span>
+                  <span>95%</span>
+                </div>
+                <div class="h-2 bg-gray-200 rounded-full">
+                  <div
+                    class="h-2 bg-secondary rounded-full"
+                    style="width: 95%"
+                  ></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-2">
+                  <span class="font-medium">Communication</span>
+                  <span>90%</span>
+                </div>
+                <div class="h-2 bg-gray-200 rounded-full">
+                  <div
+                    class="h-2 bg-secondary rounded-full"
+                    style="width: 90%"
+                  ></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-2">
+                  <span class="font-medium">Team Leadership</span>
+                  <span>85%</span>
+                </div>
+                <div class="h-2 bg-gray-200 rounded-full">
+                  <div
+                    class="h-2 bg-secondary rounded-full"
+                    style="width: 85%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="certifications" class="py-20 bg-white">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-16">Certifications</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <div class="w-16 h-16 flex items-center justify-center mb-4">
+              <i class="ri-award-line text-4xl text-primary"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">AWS Certified Developer</h3>
+            <p class="text-gray-600 mb-4">Amazon Web Services</p>
+            <p class="text-sm text-gray-500">Issued Feb 2025</p>
+          </div>
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <div class="w-16 h-16 flex items-center justify-center mb-4">
+              <i class="ri-award-line text-4xl text-primary"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Python Professional</h3>
+            <p class="text-gray-600 mb-4">Python Institute</p>
+            <p class="text-sm text-gray-500">Issued Jan 2025</p>
+          </div>
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <div class="w-16 h-16 flex items-center justify-center mb-4">
+              <i class="ri-award-line text-4xl text-primary"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Full Stack Developer</h3>
+            <p class="text-gray-600 mb-4">Meta</p>
+            <p class="text-sm text-gray-500">Issued Dec 2024</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-16">Get In Touch</h2>
+        <div class="max-w-2xl mx-auto">
+          <form class="space-y-6">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2"
+                >Name</label
+              >
+              <input
+                type="text"
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+              />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2"
+                >Email</label
+              >
+              <input
+                type="email"
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+              />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2"
+                >Message</label
+              >
+              <textarea
+                rows="4"
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              class="w-full bg-primary text-white py-3 !rounded-button hover:opacity-90 transition-opacity"
+            >
+              Send Message
+            </button>
+          </form>
+          <div class="mt-12 flex justify-center space-x-8">
+            <a
+              href="#"
+              class="w-12 h-12 flex items-center justify-center rounded-full bg-gray-100 hover:bg-primary hover:text-white transition-colors"
+            >
+              <i class="ri-github-fill text-2xl"></i>
+            </a>
+            <a
+              href="#"
+              class="w-12 h-12 flex items-center justify-center rounded-full bg-gray-100 hover:bg-primary hover:text-white transition-colors"
+            >
+              <i class="ri-linkedin-fill text-2xl"></i>
+            </a>
+            <a
+              href="#"
+              class="w-12 h-12 flex items-center justify-center rounded-full bg-gray-100 hover:bg-primary hover:text-white transition-colors"
+            >
+              <i class="ri-mail-fill text-2xl"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-white py-8">
+      <div class="container mx-auto px-6 text-center text-gray-600">
+        <p>© 2025 Anik Das. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const mobileMenuBtn = document.querySelector("button");
+        const nav = document.querySelector("nav div div:nth-child(2)");
+
+        mobileMenuBtn.addEventListener("click", () => {
+          nav.classList.toggle("hidden");
+          nav.classList.toggle("flex");
+          nav.classList.toggle("flex-col");
+          nav.classList.toggle("absolute");
+          nav.classList.toggle("top-16");
+          nav.classList.toggle("left-0");
+          nav.classList.toggle("w-full");
+          nav.classList.toggle("bg-white");
+          nav.classList.toggle("p-4");
+        });
+
+        const form = document.querySelector("form");
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const formData = new FormData(form);
+          console.log(Object.fromEntries(formData));
+          form.reset();
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute("href")).scrollIntoView({
+              behavior: "smooth",
+            });
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
